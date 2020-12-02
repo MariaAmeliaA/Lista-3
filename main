@@ -1,0 +1,45 @@
+package piramide;
+
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner (System.in);
+		
+		piramide Pintura = new piramide();
+		double h;
+		double ab;
+		int tipo;
+		
+		System.out.println("Informe a altura da priramide: ");
+		h = entrada.nextDouble();
+		
+		System.out.println("Informe o tipo de tinta: ");
+		tipo = entrada.nextInt();
+		
+		System.out.println("Informe a medida ab da piramide: ");
+		ab = entrada.nextDouble();
+		
+		Pintura.setab(ab);
+		Pintura.settipo(tipo);
+		Pintura.seth(h);
+		
+		if (Pintura.caclular()) {
+			System.out.println("Area da pirâmide: " + Pintura.getArea());
+			System.out.println("Area da base: " + Pintura.getBase());
+			System.out.println("Area total: " + Pintura.getAreat());
+			System.out.println("A1: " + Pintura.getA1());
+			System.out.println("Tipo de tinta: " + Pintura.getArea());
+			System.out.println("Latas de tintas usadas: " + Pintura.getLata());
+			System.out.println("Litros de tinta necessários: " + Pintura.getLitros());
+			System.out.println("Volume da pirâmede: " + Pintura.getVolume());
+			System.out.println("Preçoda pintura: " + Pintura.getPreco());
+		} else {
+			System.out.println("Erro: " + Pintura.getErro());
+		}
+			
+
+	}
+
+}

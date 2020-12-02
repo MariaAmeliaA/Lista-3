@@ -1,0 +1,102 @@
+package piramide;
+
+public class piramide {
+
+	int tipo = 0;
+	double h;
+	double ab;
+	double lata;
+	double a1;
+	double area_piramide;
+	double area_total;
+	double area_base;
+	double base;
+	double litros;
+	double volume;
+	double preco;
+	String erro;
+	
+	public void seth (double h) {
+		this.h = h;
+	}
+	
+	public void setab (double ab) {
+		this.ab = ab;
+	}
+	
+	public void settipo(int tipo) {
+			this.tipo = tipo;
+	}
+	
+	public boolean caclular() {
+		if (h <= 0)  {
+			erro = "Não foi informado altura";
+			return false;
+		} 
+		if (tipo < 1 || tipo > 3) {
+			erro = "Não foi informado um tipo existente de tinta";
+			return false;
+		}
+		if (ab <= 0) {
+			erro = "Não foi informado a medida AB";
+			return false;
+		}
+		a1 = Math.pow(h, 2) *  Math.pow(ab, 2);
+		base = a1 + a1;
+		area_base = base * base; 
+		area_piramide = ((base) * h) / 2;
+		area_total = (area_piramide * 4) + area_base;
+		lata = (area_total % 4.76);
+		litros = lata * 18;
+		volume = (ab * area_total) / 3;
+		preco = tipo * lata; 
+		erro = "";
+		return true;
+	}
+	
+	public double getAb() {
+		return ab;
+	}
+	
+	public double getH() {
+		return h;
+	}
+	
+	public double getA1() {
+		return a1;
+	}
+	
+	public double getArea() {
+		return area_piramide;
+	}
+	
+	public double getBase() {
+		return area_base;
+	}
+	
+	public double getAreat() {
+		return area_total;
+	}
+	
+	public double getLata() {
+		return lata;
+	}
+	
+	public double getLitros() {
+		return litros;
+	}
+	
+	public double getVolume() {
+		return volume;
+	}
+	
+	public double getPreco() {
+		return preco;
+	}
+	
+	
+	public String getErro() {
+		return erro;
+	}
+	
+}
